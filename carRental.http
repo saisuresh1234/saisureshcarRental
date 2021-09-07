@@ -1,0 +1,55 @@
+###
+
+GET  http://localhost:3000/cars/brands/?search_q=Audi&order_by=car_model
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsMTIzIiwiaWF0IjoxNjMwOTg2Nzg3fQ.671vWn-pBMbUNQLI0lYZt5Idrlxevci91Ph3MBQFOuQ
+
+###
+
+POST http://localhost:3000/users/
+Content-Type: application/json
+
+{   
+    "name":"rahul",
+    "username":"rahul123",
+    "password": "rahul@456",
+    "gender": "Male",
+    "location":"hyderabad"
+}
+
+
+###
+
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+    "username":"rahul123",
+    "password": "rahul@456"
+} 
+
+### 
+
+POST http://localhost:3000/rent/
+Content-Type:application/json 
+
+{
+    "name":"ramu",
+    "car_model":"Toyota Innova",
+    "address":"chennai",
+    "fare_price":1500,
+        
+    }
+
+###
+
+POST http://localhost:3000/feedback/ 
+Content-Type:application/json 
+
+{
+    "name":"ramu",
+    "subject":"awesome Car rental company",
+    "message":"I am very happy during pune - mahableshwar trip, very good driver and car,
+              car was very good and driver was good.cost of travel in budget overall very good I will use again and again",
+    "date_of_experience":"20 September 2018",
+    "rating":5,
+}
