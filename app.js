@@ -142,12 +142,13 @@ app.post("/rent/", authenticateToken, async (request, response) => {
 //Feedback to CAR RENTAL
 
 app.post("/feedback/", authenticateToken, async (request, response) => {
-  const { name, subject, message, date_of_experience, rating } = request.body;
+  const feedBack_details = request.body;
+  const { name, subject, message, date_of_experience, rating } = feedBack_details;
   const postFeedBackQuery = `
   INSERT INTO
     feedback(name,subject,message,date_of_experience,rating)
   VALUES
     ('${name}', '${subject}', '${message}', '${date_of_experience}', ${rating});`;
-  const feedback = await db.run(postFeedBackQuery);
+   await db.run(postFeedBackQuery);
   response.send("Thanks For your Valuable Feedback");
 });
