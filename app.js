@@ -135,8 +135,7 @@ app.post("/rent/", authenticateToken, async (request, response) => {
          ${fare_price},
       );`;
 
-  const dbResponse = await db.run(addBookQuery);
-  const Rent = dbResponse.lastID;
+   await db.run(addRentQuery);
   response.send("carBooked");
 });
 
@@ -150,6 +149,5 @@ app.post("/feedback/", authenticateToken, async (request, response) => {
   VALUES
     ('${name}', '${subject}', '${message}', '${date_of_experience}', ${rating});`;
   const feedback = await db.run(postFeedBackQuery);
-  console.log(feedback);
   response.send("Thanks For your Valuable Feedback");
 });
